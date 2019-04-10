@@ -41,7 +41,7 @@ object carlos{
 object venancio {
 	method costo(casa){ return ((casa.supTotalCasa()/10).roundUp())*220}
 }
-
+ 
 
 	
 	
