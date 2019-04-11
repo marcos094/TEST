@@ -4,7 +4,7 @@ object habitacion{
 	method superficieApintar(){return mts}
 }
 
-object cosina {
+object cocina {
 	var ancho =1
 	var largo=2
 	var alto=3.5
@@ -13,7 +13,7 @@ object cosina {
 	
 }
 object casaAldo{
-	method supTotalCasa (){return habitacion.superficieApintar()+cosina.superficieApintar()}
+	method supTotalCasa (){return habitacion.superficieApintar()+cocina.superficieApintar()}
 }
 object aldo{
 	var ahorro=6000	
