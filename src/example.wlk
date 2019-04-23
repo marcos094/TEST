@@ -1,4 +1,4 @@
-/** First Wollok example */
+/** casa pintada */
 object habitacion{
 	var mts=20
 	method superficieApintar(){return mts}
@@ -9,8 +9,6 @@ object cocina {
 	var largo=2
 	var alto=3.5
 	method superficieApintar(){return ((ancho +  largo) *2* alto)}
-	
-	
 }
 object casaAldo{
 	method supTotalCasa (){return habitacion.superficieApintar()+cocina.superficieApintar()}
@@ -23,36 +21,26 @@ object aldo{
 	method contratar(pintor){return pintor.costo(laCasa)<self.presupuesto()}
 }
 object pintura{
-	
 	var valorLata=200
 	method nuevoPrecio(precio){valorLata=precio}
 	method preciodePintura(){return valorLata}
-	method precioPintura(casa){return (((casa.supTotalCasa()/50).roundUp())*valorLata) }/*valor de cuantas latas me da para usar la casa de aldo */
-    }
+	method precioPintura(casa){return (self.cuantaLatas(casa)*valorLata)}	
+	method cuantaLatas(casa){return ((casa.supTotalCasa()/50).roundUp())}
+	}
+     
 object raul {
 	method costo(casa){return (casa.supTotalCasa() * 25) + pintura.precioPintura(casa)}
 	}	
 object carlos{
-	method costo(casa){if (casa.supTotalCasa()<20)
-                           return 500
-                       else
-                          return 500+((casa.supTotalCasa()-20)*30)          			}
-}	
+	method costo(casa){return 500.max(30*(casa-20))}
+}
 object venancio {
 	method costo(casa){ return ((casa.supTotalCasa()/10).roundUp())*220}
 }
- 
-
-	
-	
-
-	
-
-	
-	
-
-
-		
+object pinturaGranel {
+	var valorLata = 3.50
+	method preciodePintura(casa){return valorLata*casa}
+}
 	
 		
 		
