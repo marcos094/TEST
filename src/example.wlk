@@ -15,10 +15,9 @@ object casaAldo{
 }
 object aldo{
 	var ahorro=6000	
-	var laCasa=casaAldo
 	method presupuesto(){return ahorro*0.20 }
 	method aHorrar(plata) {ahorro=ahorro+plata}
-	method contratar(pintor){return pintor.costo(laCasa)<self.presupuesto()}
+	method contratar(pintor){return pintor.costo(casaAldo )<self.presupuesto()}
 }
 object pintura{
 	var valorLata=200
